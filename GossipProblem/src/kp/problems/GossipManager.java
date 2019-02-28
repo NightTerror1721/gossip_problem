@@ -5,8 +5,12 @@
  */
 package kp.problems;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.Objects;
@@ -30,6 +34,23 @@ public final class GossipManager
         p.setItinerary(itinerary);
         addPerson(p);
         return p;
+    }
+    
+    public final void loadPeopleFromFile(Path file)
+    {
+        try(BufferedReader br = Files.newBufferedReader(file))
+        {
+            br.lines().forEach(this::loadPersonFromText);
+        }
+        catch(IOException ex) { ex.printStackTrace(System.err); }
+    }
+    
+    public final void loadPersonFromText(String line)
+    {
+        String[] stops = line.split("\\s");
+        Person p = new Person();
+        p.setItinerary(stops);
+        addPerson(p);
     }
     
     public final void clear() { people.clear(); }
