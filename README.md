@@ -9,9 +9,9 @@ Enjoy it.
 
 # How to use
 You can run GossipProblem.jar in three ways:
-<-example>: Execute the code with two examples that exist within the program.
-<-files> <file1>, [<file2>, ...]: Will make the calculations for each of the indicated files.
-<-input>: Will ask for the number of people and their itinerary per terminal. Then calculate the number of stops.
+- <-example>: Execute the code with two examples that exist within the program.
+- <-files> <file1>, [<file2>, ...]: Will make the calculations for each of the indicated files.
+- <-input>: Will ask for the number of people and their itinerary per terminal. Then calculate the number of stops.
 
 # Tips
 
